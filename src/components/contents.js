@@ -4,13 +4,27 @@ let Contents = React.createClass({
   getInitialState () {
     return {
       show: false,
+      btnState: false,
     };
   },
   
   handleClick() {
     this.setState({
       show:!this.state.show,
+     
     })
+  },
+  
+  handleTimeout() {
+    var self = this;
+    this.setState({
+      btnState: true
+    })
+    setTimeout(() => {
+      this.setState({
+        btnState: false,
+      });
+    },5000)
   },
   
   render() {
@@ -60,6 +74,14 @@ let Contents = React.createClass({
               <pre className="highlight javascript"><code>
               {'<Spinner show={this.state.show} type="gif" color="#3498db"></Spinner>'}
               </code></pre>
+              <h4>行内加载 <code>display</code> 属性</h4>
+             
+              <button style={{marginLeft:20}} disabled={this.state.btnState} className="pure-button pure-button-primary" onClick={() => {this.handleTimeout()}}>显示
+                 <Spinner size="24" display="inline"  show={this.state.btnState} color="#fff"></Spinner>
+              </button>
+              <pre className="highlight javascript"><code>
+              {'<Spinner show={this.state.show} type="gif" color="#3498db"></Spinner>'}
+              </code></pre>
               <h3 style={{paddingTop:40,textAlign:'center'}}>
                 <a className="button-xlarge pure-button pure-button-radius" href="https://github.com/JackPu/react-loading-spinner">DOWNLOAD AND DOCUMENT</a>
                 </h3>
@@ -72,24 +94,6 @@ let Contents = React.createClass({
     );
   },
   
-  handleRes(res) {
-    console.log(res);
-    this.setState({
-      src: res.data.src
-    });
-  },
-  
-  handleCropRes(res) {
-    this.setState({
-      cropArgs:{
-        src: 'http://img1.vued.vanthink.cn/vuedff07db9e592f103e0f8108bc633d2663.png',
-        x: parseInt(res.data.post.toCropImgX),
-        y: parseInt(res.data.post.toCropImgY),
-        w: parseInt(res.data.post.toCropImgW),
-        h: parseInt(res.data.post.toCropImgH)
-      }
-    });
-  }
 });
 
 export default Contents;  

@@ -20,11 +20,12 @@ class Spinner  extends Component {
       return <span></span>;
     }
     const size = this.props.size;
+    let ste = this.props.style;
     if(size > 0) {
-      this.props.style.fontSize = size;
+      ste.fontSize = size;
     }
     let loading = (
-      <div className="svg-loader" style={this.props.style}>
+      <div className="svg-loader" style={ste}>
         <svg width="1em" height="1em" ><circle style={{stroke:this.props.color}} cx="0.5em" cy="0.5em" r="0.45em"/></svg>
       </div>
     );

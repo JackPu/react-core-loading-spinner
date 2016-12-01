@@ -59,6 +59,8 @@ npm run start
 | type | String   |   gif | loading gif |
 | style | Object   |   '1:1' | change loading wrap style|
 
+### Contributions
 
+Your contributions and suggestions are welcome 😄😄😄
 
 ### MIT Liscense 
