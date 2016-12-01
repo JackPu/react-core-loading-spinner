@@ -48,7 +48,7 @@ let Contents = React.createClass({
                 </Spinner>
               </div>
               <pre className="highlight javascript"><code>
-              {'<Spinner show={true} type="gif" color="#3498db"></Spinner>'}
+              {'<Spinner show={true} type="gif" color="#3498db"><img width={80} src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif"/></Spinner>'}
               </code></pre>
               <h4>使用事件控制加载隐藏 <code>show</code> 属性</h4>
               <button className="pure-button pure-button-primary" onClick={() => {this.handleClick()}}>显示</button>
