@@ -47,12 +47,13 @@ let App = React.createClass({
 
 
 ## Run Demo
+
 ``` bash
 npm run start
 ```
-[http://localhost:9000/webpack-dev-server/demo/index.html](http://localhost:9000/webpack-dev-server/demo/index.html)
+Pls open the url:
 
-[Demo](http://vanthink-ued.github.io/react-core-loading-spinner/)
+http://localhost:9001/webpack-dev-server/demo/index.html
 
 ## Props
 
