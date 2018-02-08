@@ -1,75 +1,78 @@
 /** 加载条组件
- * 支持自定义文案，加载动画，和样式 
- * 默认提供 Material , gif加载样式 
-**/
+ * 支持自定义文案，加载动画，和样式
+ * 默认提供 Material , gif加载样式
+ */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import Gif from './gif';
 
 
-let style = require('style-loader!css-loader!./style.css');
+const css = require('style-loader!css-loader!./style.css');
 
-class Spinner  extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
+class Spinner extends Component {
   render() {
-    
-    if(!this.props.show) {
-      return <span></span>;
+    const {
+      size,
+      show,
+      type,
+      color,
+      children,
+    } = this.props;
+
+    if (!show) {
+      return <span />;
     }
-    const size = this.props.size;
-    let ste = this.props.style;
-    if(size > 0) {
-      ste.fontSize = size;
+    const styleObject = Object.assign({}, this.props.style);
+    if (size) {
+      styleObject.fontSize = size;
     }
     let loading = (
-      <div className="svg-loader" style={ste}>
-        <svg width="1em" height="1em" ><circle style={{stroke:this.props.color}} cx="0.5em" cy="0.5em" r="0.45em"/></svg>
+      <div className="svg-loader" style={styleObject}>
+        <svg width="1em" height="1em" >
+          <circle style={{ stroke: color }} cx="0.5em" cy="0.5em" r="0.45em" />
+        </svg>
       </div>
     );
-    if(this.props.type != 'svg') {
-      loading = <Gif size={this.props.size}></Gif>;  
+    if (type !== 'svg') {
+      loading = <Gif size={size} />;
     }
-    
-    if(this.props.children) {
-      loading = this.props.children;
+    if (children) {
+      loading = children;
     }
-    
     // 返回行内的加载内容
-    if(this.props.display == 'inline') {
-      return loading;  
+    if (this.props.display === 'inline') {
+      return loading;
     }
-    
     return (
       <div className="react-loading-spinner" >
         <div className="loading-inner">
           {loading}
           <div className="alert-text">{this.props.text}</div>
-        </div> 
+        </div>
       </div>
-    )
+    );
   }
 }
 
 Spinner.propTypes = {
-  type: React.PropTypes.string,
-  display: React.PropTypes.string,
-  color: React.PropTypes.string,
-  style: React.PropTypes.object,
-  text: React.PropTypes.string,
-  cls: React.PropTypes.string,
-  show: React.PropTypes.bool,
+  type: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  text: PropTypes.string,
+  show: PropTypes.bool,
+  size: PropTypes.string,
+  display: PropTypes.string,
 };
 
 Spinner.defaultProps = {
   type: 'svg',
   style: {},
   color: '#9b59b6',
-  text: '加载中...',
-  cls: '',
+  text: 'Loading...',
   show: false,
-}
+  size: '24px',
+  display: 'block',
+};
 
 export default Spinner;

@@ -6,16 +6,21 @@
 
 <img src="./shots/react-loading-spinner.png" height="180"/>
 
-A component for loading spinner
+A component for loading spinner.
+
+[Example](http://events.jackpu.com/react-core-loading-spinner/)
 
 
-### Install
+## Install
+
 Use Npm
+
 ```bash
 npm install react-core-loading-spinner --save-dev
 ```
 
-Use yarn
+Use Yarn
+
 ``` bash
 yarn add react-core-loading-spinner
 ```
@@ -23,8 +28,8 @@ yarn add react-core-loading-spinner
 Code Example
 ``` js
 import React from 'react';
-import {Spinner}  from '../react-core-image-upload';
-let App = React.createClass({ 
+import {Spinner}  from 'react-core-loading-spinner';
+let App = React.createClass({
 //...
 
   render() {
@@ -34,33 +39,34 @@ let App = React.createClass({
       </div>
     );
   },
-  
+
 })
 
 ```
 
 
 
-### Run demo
+## Run Demo
 ``` bash
 npm run start
 ```
 [http://localhost:9000/webpack-dev-server/demo/index.html](http://localhost:9000/webpack-dev-server/demo/index.html)
 
 [Demo](http://vanthink-ued.github.io/react-core-loading-spinner/)
-### Options
+
+## Props
 
 | Props        | Type         | Example  | Description  |
 | ------------- |:----------| ---------|--------------|
 | show     | Boolean | true | show or hide  |
 | text      | String      |  'Loading...' | the text you want to show |
-| size | Number     |   28 | the size of the loading spinner |
-| children | Element   |    ... | change the loading element |
+| size | String     |   28px | the size of the loading spinner |
+| children | Component   |    ... | change the loading element |
 | type | String   |   gif | loading gif |
-| style | Object   |   '1:1' | change loading wrap style|
+| style | Object   |   {} | change loading wrap style|
 
-### Contributions
+## Contributions
 
-Your contributions and suggestions are welcome 😄😄😄
+Your contributions and suggestions are welcome 😄😄💐💐🌠🌠
 
-### MIT Liscense 
+## MIT Liscense

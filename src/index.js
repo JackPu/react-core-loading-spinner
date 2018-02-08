@@ -4,4 +4,4 @@ import Gif from './gif';
 export {
   Spinner,
   Gif,
-}
+};

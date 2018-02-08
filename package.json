@@ -15,17 +15,17 @@
     "type": "git"
   },
   "scripts": {
-    "start": "webpack-dev-server --port 9000",
-    "build": "webpack --config ./webpack.config.build.js --progress --colors",
-    "build_demo": "webpack --config ./webpack.config.js --progress --colors",
+    "start": "webpack-dev-server --config build/server.js",
+    "build": "webpack --config ./build/webpack.config.build.js --progress --colors",
+    "build_demo": "webpack --config ./build/webpack.config.js --progress --colors",
     "test": "karma start karma.conf.js"
   },
   "author": "JackPu <kakashjack@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "react": "^15.3.2",
-    "react-addons-test-utils": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -37,6 +37,11 @@
     "browserify": "^13.1.0",
     "css-loader": "^0.26.0",
     "enzyme": "^2.5.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
     "expect": "^1.20.2",
     "history": "^4.3.0",
     "jasmine-core": "^2.5.2",
@@ -49,7 +54,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
     "mocha": "^3.1.2",
-    "react-addons-test-utils": "^15.3.2",
+    "react-addons-test-utils": "^15.6.2",
     "react-hot-loader": "^3.0.0-beta.6",
     "style-loader": "^0.13.1",
     "watchify": "^3.7.0",
